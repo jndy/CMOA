@@ -63,7 +63,11 @@ var mySwiper4 = new Swiper ('.swiper-container4',{
         if(swiper.activeIndex != 2){
             $('#section4 .send').removeClass('sendbox');
         }
+        $('#section4 .section4_page2 .send').removeClass('sendbox2');
+        $('#section4 .section4_page2').removeClass('gonext');
+        $('.section4_page2').removeClass('openoffice');
         $('#section4 .point3').show();
+
     },
     speed:1000,
     simulateTouch: false
@@ -262,8 +266,30 @@ function continueAnimate4(){
     });
 
     $('#section4 .sendbtn').off().on('click',function(){
-        $('#section4 .send').addClass('sendbox');
+        $('#section4 .section4_page3 .send').addClass('sendbox');
         $('#section4 .point').hide();
+    });
+
+    $('#section4 .openofficebtn').off().on('click',function(){
+        $('.section4_page2').addClass('openoffice');
+        $('#section4 .point3').hide();
+        setTimeout(function(){
+            $('#section4 .point3').show();
+        },2000);
+    });
+
+    $('#section4 .saveOffice').off().on('click',function(){
+        $('#section4 .section4_page2 .send').addClass('sendbox2');
+        $('#section4 .section4_page2').addClass('gonext');
+        $('#section4 .point').hide();
+        setTimeout(function(){
+            $('#section4 .point3').show();
+        },1000);
+    });
+
+    $('#section4 .closeOffice').off().on('click',function(){
+        $('#section4 .section4_page2').removeClass('openoffice');
+        $('#section4 .point').show();
     });
 }
 

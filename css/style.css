@@ -126,14 +126,14 @@ body{ font-family: "微软雅黑";}
 .section1 .showbox .section1_page1 .nextstep{ position: absolute; right: 15px;bottom: 15px;width:200px; height: 200px; display: block;}
 .section1 .showbox .section1_page2 .nextstep{ position: absolute; left: 0px;top: 0px;width: 653px; height: 77px; display: block;}
 .section1 .showbox .section1_page3 .openofficebox{ position: absolute; right: 18px;bottom:83px;width: 110px; height: 31px; z-index:20; display: block; }
-.section1 .showbox .section1_page3 .officediv{ position: absolute; left: 165px; top: 52px; width: 220px; opacity: 0;}
-.section1 .showbox .section1_page3 .inputlist{ padding: 0 10px; position: relative; height: 28px; line-height: 28px; margin-bottom: 6px; font-size: 14px; color: #666;}
-.section1 .showbox .section1_page3 .opendown{ position: absolute; left:0px; top:28px; background: #fff; width: 218px; border:1px solid #dadada; border-top:none; background: #fff; z-index: 10;}
-.section1 .showbox .section1_page3 .inputbox .text{ border: none; margin-top: 1px; height: 26px;width: 200px; line-height: 26px; background: #fff; font-size: 14px; color: #666; font-family: "微软雅黑";}
-.section1 .showbox .section1_page3 .opendown ol li{ height: 27px; height: 27px; padding: 0 10px; cursor: pointer;}
-.section1 .showbox .section1_page3 .opendown ol li.active{ background: #dadada;}
-.section1 .showbox .section1_page3 .saveOffice{ width: 56px; height: 28px; display: block; position: absolute; left: 366px; top: 225px;}
-.section1 .showbox .section1_page3 .closeOffice{ width: 56px; height: 28px; display: block; position: absolute; left: 427px; top: 225px;}
+.showbox .officediv{ position: absolute; left: 165px; top: 52px; width: 220px; opacity: 0;}
+.showbox .inputlist{ padding: 0 10px; position: relative; height: 28px; line-height: 28px; margin-bottom: 6px; font-size: 14px; color: #666;}
+.showbox .opendown{ position: absolute; left:0px; top:28px; background: #fff; width: 218px; border:1px solid #dadada; border-top:none; background: #fff; z-index: 10;}
+.showbox .inputbox .text{ border: none; margin-top: 1px; height: 26px;width: 200px; line-height: 26px; background: #fff; font-size: 14px; color: #666; font-family: "微软雅黑";}
+.showbox .opendown ol li{ height: 27px; height: 27px; padding: 0 10px; cursor: pointer;}
+.showbox .opendown ol li.active{ background: #dadada;}
+.showbox  .saveOffice{ width: 56px; height: 28px;  display: block; position: absolute; left: 366px; top: 225px;}
+.showbox .closeOffice{ width: 56px; height: 28px; display: block; position: absolute; left: 427px; top: 225px;}
 .section1 .showbox .section1_page3 .send-okay{ position: absolute; left:285px; top: 224px;}
 .section1 .showbox .section1_page3 .listpage{ position: absolute; left: 0px; top:-1000px; z-index: 1000;}
 .section1 .showbox .section1_page3 .officedialog{ position: absolute; left: 234px;
@@ -475,21 +475,47 @@ body{ font-family: "微软雅黑";}
 .section4 .showbox .section4_page1 .img{ width: 100%;}
 .section4 .showbox .section4_page2 .point{ position: absolute; left: 587px; top:90px; opacity:0; }
 .section4 .showbox .section4_page3 .point{ position: absolute; left:215px; top:103px; opacity: 0; }
-.section4 .showbox .section4_page3 .send{ position: absolute;  left: 527px; top :278px ;width: 0px; height:0; opacity: 0;}
+.section4 .showbox  .send{ position: absolute;  left: 527px; top :278px ;width: 0px; height:0; opacity: 0; z-index: 100;}
 
+.section4 .showbox .section4_page2 .magnify{ position: absolute;top:88px;left: 195px;width: 0px; height:0px; z-index: 10;}
 .section4 .showbox .section4_page1 .nextstep{ position: absolute; left: 0px;
     bottom:0px;width: 653px; height: 80px; display: block; z-index: 100; }
-.section4 .showbox .section4_page2 .nextstep{ position: absolute; left:548px;
+.section4 .showbox .section4_page2 .openofficebtn{ position: absolute; left:548px;
     top:80px;width:90px; height:20px; display: block; }
 .section4 .showbox .section4_page3 .sendbtn{ position: absolute; left: 210px;
     top:88px;width:58px; height: 28px; z-index:20; display: block; }
-
-.active .section4 .swiper-slide-active  .magnify{
+.section4  .officediv{ left:166px; top: 98px;}
+.section4 .showbox .saveOffice,.section4 .showbox .closeOffice{ top: 270px;}
+.active .section4 .swiper-slide-active  .magnify1{
     animation: magnify4 2s;
     -moz-animation: magnify4 2s;
     -webkit-animation: magnify4 2s;
     -o-animation: magnify4 2s;
     animation-delay:1s;
+    animation-fill-mode:forwards;
+}
+
+.active .section4 .openoffice .point{
+    left: 567px;
+    z-index: 100;
+    top: 370px;
+    display: none;
+}
+.active .section4 .openoffice  .magnify2{
+    animation: openoffice2 2s;
+    -moz-animation: openoffice2 1s;
+    -webkit-animation: openoffice2 1s;
+    -o-animation: openoffice2 1s;
+    animation-delay:0.5s;
+    animation-fill-mode:forwards;
+}
+
+.active .section4  .openoffice .officediv{
+    animation: officediv2 2s;
+    -moz-animation: officediv 2s;
+    -webkit-animation: officediv 2s;
+    -o-animation: officediv 2s;
+    animation-delay:1.5s;
     animation-fill-mode:forwards;
 }
 .active .section4 .swiper-slide-active  .point{
@@ -498,6 +524,13 @@ body{ font-family: "微软雅黑";}
     -o-animation:point 1.8s infinite;
     animation-delay:2.8s;
 }
+.active .section4  .section4_page2 .point{
+    animation-delay:0s;
+}
+
+.active .section4  .section4_page3 .point{
+    animation-delay:0s;
+}
 
 .section4 .swiper-slide-active  .sendbox{
     animation:sendbox 0.5s;
@@ -505,18 +538,51 @@ body{ font-family: "微软雅黑";}
     -o-animation:sendbox 0.5s;
     animation-fill-mode:forwards;
 }
-.section4 .section4_page2 .point,.section4 .section4_page3 .point{animation-delay:0s;}
-
-@keyframes magnify4
-{
-    from { left: 455px;width: 0px; height:0px;}
-    to {left:129px;width: 653px; height:161px; }
+.section4 .swiper-slide-active  .sendbox2{
+    animation:sendbox2 0.5s;
+    -webkit-animation:sendbox2 0.5s;
+    -o-animation:sendbox2 0.5s;
+    animation-fill-mode:forwards;
 }
+.section4 .section4_page2 .nextstep{  width: 65px; height: 20px; position: absolute; top:76px; left: 60px; display: block;}
+.section4 .section4_page2 .point,.section4 .section4_page3 .point{animation-delay:0s;}
+.section4 .section4_page2 .point3{ left: 94px; top: 103px;}
+.active .section4 .gonext .point3{ left: 77px; top: 85px; z-index: 100;}
+@keyframes magnify4
+ {
+     from { left: 455px;width: 0px; height:0px;}
+     to {left:129px;width: 653px; height:161px; }
+ }
 
 @-webkit-keyframes magnify4
 {
     from { left: 455px;width: 0px; height:0px;}
     to {left:129px;width: 653px; height:161px; }
+}
+
+@keyframes movepoint
+{
+    from { left: 587px; top:90px; opacity: 0;}
+    to {left:587px;width: 390px; height:161px; opacity: 100; }
+}
+
+@-webkit-keyframes movepoint
+{
+    from { left: 587px; top:90px; opacity: 0;}
+    to {left:587px;width: 390px; height:161px; opacity: 100; }
+}
+
+
+@keyframes openoffice2
+{
+    from { left:597px;width: 0px; height:0px;opacity: 0;}
+    to {left:195px;width: 495px; height:303px;opacity: 1; }
+}
+
+@-webkit-keyframes openoffice2
+{
+    from { left:597px;width: 0px; height:0px;opacity: 0;}
+    to {left:195px;width: 495px; height:303px;opacity: 1; }
 }
 
 @keyframes senbox
@@ -529,6 +595,18 @@ body{ font-family: "微软雅黑";}
 {
     from { left: 527px; top :278px ;width: 0px; height:0; opacity:0;}
     to { left:200px; top:79px; width:655px; height:477px; opacity:1;}
+}
+
+@keyframes senbox2
+{
+    from { left: 527px; top :278px ;width: 0px; height:0; opacity:0;}
+    to { left:130px; top:74px; width:726px; height:478px; opacity:1;}
+}
+
+@-webkit-keyframes sendbox2
+{
+    from { left: 527px; top :278px ;width: 0px; height:0; opacity:0;}
+    to { left:130px; top:74px; width:726px; height:478px; opacity:1;}
 }
 /*section4 style end*/
 
