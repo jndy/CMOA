@@ -63,10 +63,12 @@ var mySwiper4 = new Swiper ('.swiper-container4',{
         if(swiper.activeIndex != 2){
             $('#section4 .send').removeClass('sendbox');
         }
-        $('#section4 .section4_page2 .send').removeClass('sendbox2');
-        $('#section4 .section4_page2').removeClass('gonext');
-        $('.section4_page2').removeClass('openoffice');
-        $('#section4 .point3').show();
+        if(swiper.activeIndex ==1 || swiper.activeIndex==2){
+            $('#section4 .section4_page2 .send').removeClass('sendbox2');
+            $('#section4 .section4_page2').removeClass('gonext');
+            $('.section4_page2').removeClass('openoffice');
+        }
+        $('#section4 .point2,#section4 .point1').show();
 
     },
     speed:1000,
@@ -78,9 +80,9 @@ $(function() {
         anchors: ['page1', 'page2', 'page3', 'page4',"page5"],
         afterLoad:function(anchorLink ,index){
             //判断index是因为之前的第4版本提前到了版本1
-            if(index == 1 && window['continueAnimate'+index]){
+            if(index == 2 && window['continueAnimate'+index]){
                 window['continueAnimate'+4]();
-            }else if(index < 5){
+            }else if(index>2 && index < 5){
                 window['continueAnimate'+(index-1)]();
             }else{
                 if(window['continueAnimate'+index]){
@@ -272,24 +274,24 @@ function continueAnimate4(){
 
     $('#section4 .openofficebtn').off().on('click',function(){
         $('.section4_page2').addClass('openoffice');
-        $('#section4 .point3').hide();
+        $('#section4 .point2').hide();
         setTimeout(function(){
-            $('#section4 .point3').show();
+            $('#section4 .point2').show();
         },2000);
     });
 
     $('#section4 .saveOffice').off().on('click',function(){
         $('#section4 .section4_page2 .send').addClass('sendbox2');
         $('#section4 .section4_page2').addClass('gonext');
-        $('#section4 .point').hide();
+        $('#section4 .point2').hide();
         setTimeout(function(){
-            $('#section4 .point3').show();
+            $('#section4 .point2').show();
         },1000);
     });
 
     $('#section4 .closeOffice').off().on('click',function(){
         $('#section4 .section4_page2').removeClass('openoffice');
-        $('#section4 .point').show();
+        $('#section4 .point2').show();
     });
 }
 
@@ -298,7 +300,7 @@ function continueAnimate3(){
     clearInterval(timer);
     var timer = setInterval(function(){
         var hash = window.location.hash;
-        if(hash.indexOf("page3") < 0){
+        if(hash.indexOf("page4") < 0){
             clearInterval(timer);
             if($(".section3 .wrap").eq(0).hasClass('hide')){
                 setTimeout(function(){
@@ -342,6 +344,11 @@ function continueAnimate3(){
         }
 
     });
+
+    $(".section3 .space-r .next").click(function(event){
+        $.fn.fullpage.moveSectionDown();
+        event.stopPropagation();
+    })
 }
 
 //第五屏交互
