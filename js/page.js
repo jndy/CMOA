@@ -68,6 +68,10 @@ var mySwiper4 = new Swiper ('.swiper-container4',{
             $('#section4 .section4_page2').removeClass('gonext');
             $('.section4_page2').removeClass('openoffice');
         }
+
+
+        var arr = ['查收<br>邮件','保存到<br>办公空间','发送<br>会议通知'];
+        $('#title>h2').html(arr[swiper.activeIndex]);
         $('#section4 .point2,#section4 .point1').show();
 
     },
@@ -89,6 +93,7 @@ $(function() {
                     window['continueAnimate'+index]();
                 }
             }
+
 
         },
         navigation: true
