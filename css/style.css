@@ -1,0 +1,617 @@
+/* Reset CSS
+ * --------------------------------------- */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration:none;
+}
+table {
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+strong{
+    font-weight: bold;
+}
+ol,ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+caption,th {
+    text-align: left;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin:0;
+    padding:0;
+    color:#444;
+}
+q:before,q:after {
+    content:'';
+}
+abbr,acronym { border: 0;
+}
+
+/*common css*/
+.pr{ position: relative;}
+.pb{ position: absolute;}
+
+body{ font-family: "微软雅黑";}
+
+.section{ position: relative;}
+.hide{ display: none;}
+/*section1 section1 background style start*/
+.samebg{background-color: #f0e6df;}
+.samebg .officebg{ position: absolute;  width: 1260px; height: 616px; left: 50%; bottom: 111px; margin: 0 0 0 -630px; z-index: 2;}
+.samebg .floor{position: absolute; width: 100%; height: 250px; left: 0px; bottom: 0px; background: #e0d4cb; z-index: 1;}
+.samebg .clock{position: absolute; width: 153px; height: 72px; left: 48px; top: 0px; background: url("../images/section1/clock.png") no-repeat;}
+.samebg .office{ position: absolute;width: 396px; height: 304px; left: 0px; bottom: 138px; background: url("../images/section1/office.png") no-repeat; }
+
+.samebg .person{position:absolute; width:165px; height:245px; left:-1000px; top:339px;background: url("../images/section1/person.png") no-repeat;}
+.samebg .showbox{ position: absolute; right:-2000px; bottom: 0; width: 855px; height: 556px; border: 15px solid #ffb400; border-radius: 15px; opacity: 0;}
+
+.samebg .boxarrow{ position: absolute; bottom: 77px; left: -120px; width: 110px; height: 166px; display: block; background: url("../images/section1/leftarrow.png") no-repeat;}
+.samebg .showbox .title{ position: absolute;top: -76px; left: -76px; width: 145px; height: 145px; background: #fff;  border: 4px solid #b48d71; border-radius: 154px; z-index: 10;}
+.samebg .showbox .title h2{ color: #9a7458; font-size: 27px; text-align: center; margin-top: 39px; line-height: 30px; height: 60px;font-family: "microsoft yahei";}
+.active .officebg .person{
+    animation: person 1s;
+    -moz-animation: person 1s;
+    -webkit-animation: person 1s;
+    -o-animation: person 1s;
+    animation-delay:0.5s;
+    animation-fill-mode:forwards;
+}
+
+.active .officebg .showbox{
+    animation: showbox 1s;
+    -moz-animation: showbox 1s;
+    -webkit-animation: showbox 1s;
+    -o-animation: showbox 1s;
+    animation-delay:1s;
+    animation-fill-mode:forwards;
+}
+.active .showbox .title{
+    animation-name: bounceInDown;
+    animation:bounceInDown 5s infinite;
+    animation-iteration-count: 1;
+}
+@keyframes person
+{
+    from {left:-1000px;}
+    to { left:125px; }
+}
+
+@-webkit-keyframes person
+{
+    from {left:-1000px;}
+    to { left:125px; }
+}
+
+@keyframes showbox
+{
+    from { opacity: 0;right: -2000px;}
+    to {  opacity: 100;right: -0px;}
+}
+
+@-webkit-keyframes showbox
+{
+    from { opacity: 0;right: -2000px;}
+    to {  opacity: 100;right: -0px;}
+}
+/*section1 section1 background style end*/
+
+
+/*section1 style start*/
+.section1 .showbox .sectionbox{positon:relative;}
+.section1 .showbox .section1_page1 .magnify{ position: absolute; left:0px;bottom:30px; left: 10px;width: 0px; height:0px;z-index: 11;}
+.section1 .showbox .section1_page1 .point{ position: absolute; right: 89px; bottom:64px; opacity: 0;  }
+.section1 .showbox .section1_page1 .img{ width: 100%;}
+.section1 .showbox .section1_page2 .magnify{ position: absolute; top: 83px; left: 129px; z-index: 11;}
+.section1 .showbox .section1_page2 .point{ position: absolute; left: 413px; top:40px; opacity: 0; }
+.section1 .showbox .section1_page3 .magnify{ position: absolute;  width: 0px; height: 0px; bottom: 110px; right: 74px; z-index: 11;}
+.section1 .showbox .section1_page3 .point3{ position: absolute; right:35px; bottom:18px; opacity: 0; }
+.section1 .showbox .section1_page3 .point4{ position: absolute; left:370px; top:236px; opacity: 0; }
+
+.section1 .showbox .section1_page1 .nextstep{ position: absolute; right: 15px;bottom: 15px;width:200px; height: 200px; display: block;}
+.section1 .showbox .section1_page2 .nextstep{ position: absolute; left: 0px;top: 0px;width: 653px; height: 77px; display: block;}
+.section1 .showbox .section1_page3 .openofficebox{ position: absolute; right: 18px;bottom:83px;width: 110px; height: 31px; z-index:20; display: block; }
+.section1 .showbox .section1_page3 .officediv{ position: absolute; left: 165px; top: 52px; width: 220px; opacity: 0;}
+.section1 .showbox .section1_page3 .inputlist{ padding: 0 10px; position: relative; height: 28px; line-height: 28px; margin-bottom: 6px; font-size: 14px; color: #666;}
+.section1 .showbox .section1_page3 .opendown{ position: absolute; left:0px; top:28px; background: #fff; width: 218px; border:1px solid #dadada; border-top:none; background: #fff; z-index: 10;}
+.section1 .showbox .section1_page3 .inputbox .text{ border: none; margin-top: 1px; height: 26px;width: 200px; line-height: 26px; background: #fff; font-size: 14px; color: #666; font-family: "微软雅黑";}
+.section1 .showbox .section1_page3 .opendown ol li{ height: 27px; height: 27px; padding: 0 10px; cursor: pointer;}
+.section1 .showbox .section1_page3 .opendown ol li.active{ background: #dadada;}
+.section1 .showbox .section1_page3 .saveOffice{ width: 56px; height: 28px; display: block; position: absolute; left: 366px; top: 225px;}
+.section1 .showbox .section1_page3 .closeOffice{ width: 56px; height: 28px; display: block; position: absolute; left: 427px; top: 225px;}
+.section1 .showbox .section1_page3 .send-okay{ position: absolute; left:285px; top: 224px;}
+.section1 .showbox .section1_page3 .listpage{ position: absolute; left: 0px; top:-1000px; z-index: 1000;}
+.section1 .showbox .section1_page3 .officedialog{ position: absolute; left: 234px;
+    color: #21406e; top: 117px; height: 25px; line-height: 25px; width: 500px; line-height: 25px; }
+/*section1 animation start*/
+.modeforwards{animation-fill-mode:forwards;}
+.active .section1 .swiper-slide-active  .point{
+    animation:point 1.8s infinite;
+    -webkit-animation:point 1.8s infinite;
+    -o-animation:point 1.8s infinite;
+    animation-delay:2s;
+}
+
+.active .section1 .swiper-slide-active  .point1{
+    animation-delay:2.8s;
+}
+.section1 .swiper-slide-active  .point3{
+    animation-delay:0s;
+}
+.active .section1 .swiper-slide-active  .magnify1{
+    animation: magnify1 2s;
+    -moz-animation: magnify1 2s;
+    -webkit-animation: magnify1 2s;
+    -o-animation: magnify1 2s;
+    animation-delay:1s;
+    animation-fill-mode:forwards;
+}
+
+.section1 .swiper-slide-active .magnify2{
+    animation: magnify2 1.5s;
+    -moz-animation: magnify2 1.5s;
+    -webkit-animation: magnify2 1.5s;
+    -o-animation: magnify2 1.5s;
+    animation-fill-mode:forwards;
+}
+
+.section1 .swiper-slide-active .openoffice{
+    animation: officebox 1.5s;
+    -moz-animation: officebox 1.5s;
+    -webkit-animation: officebox 1.5s;
+    -o-animation: officebox 1.5s;
+    animation-fill-mode:forwards;
+}
+
+.section1 .swiper-slide-active .openoffice .officediv{
+    animation: officediv 1.5s;
+    -moz-animation: officediv 1.5s;
+    -webkit-animation: officediv 1.5s;
+    -o-animation: officediv 1.5s;
+    animation-delay:1.5s;
+    animation-fill-mode:forwards;
+}
+.section1 .swiper-slide-active .send-down{
+    animation: senddown 0.8s;
+    -moz-animation: senddown 0.8s;
+    -webkit-animation: senddown 0.8s;
+    -o-animation: senddown 0.8s;
+    animation-delay:0.5s;
+    animation-fill-mode:forwards;
+}
+
+/*.section1 .swiper-slide-active .send-down .send-okay{
+    animation-name: bounceInDown;
+    animation:bounceInDown 3s infinite;
+    animation-iteration-count: 1;
+}*/
+
+@keyframes magnify1
+{
+    from {top: 74px;left:271px;width: 0px; height:0px;}
+    to { top: 74px;left:280px; width: 275px; height: 363px; }
+}
+
+@-webkit-keyframes magnify1
+{
+    from {top: 74px;left:271px;width: 0px; height:0px;}
+    to { top: 74px;left:280px; width: 275px; height: 363px; }
+}
+
+@keyframes magnify2
+{
+    from {top: 356px; left: 326px; width: 0px; height: 0px;}
+    to { top: 80px; left: 120px; width: 653px; height: 318px; }
+}
+
+@-webkit-keyframes magnify2
+{
+    from {top: 356px; left: 326px; width: 0px; height: 0px;}
+    to { top: 80px; left: 120px;width: 653px; height: 318px; }
+}
+
+@keyframes officebox
+{
+    from {width: 0px; height: 0px; bottom: 110px; right: 74px}
+    to {  width: 630px; height: 324px; bottom: 174px; right: 83px;}
+}
+
+@-webkit-keyframes closeoffice
+{
+    from {  width: 630px; height: 324px; bottom: 174px; right: 83px;}
+    to { width: 0px; height: 0px; bottom: 110px; right: 74px;}
+}
+
+@keyframes closeoffice
+{
+    from {  width: 630px; height: 324px; bottom: 174px; right: 83px; opacity: 1;}
+    to { width: 0px; height: 0px; bottom: 110px; right: 74px; opacity: 0;}
+}
+
+@-webkit-keyframes officebox
+{
+    from { width: 0px; height: 0px; bottom: 110px; right: 74px; opacity: 1;}
+    to {  width: 630px; height: 324px; bottom: 174px; right: 83px; opacity: 0;}
+}
+@keyframes senddown
+{
+    from {top:-1000px;}
+    to {top:0;}
+}
+
+@-webkit-keyframes senddown
+{
+    from {top:-1000px;}
+    to {top:0;}
+}
+@keyframes officediv
+{
+    from {opacity: 0;}
+    to {opacity:100;}
+}
+
+@-webkit-keyframes officebox
+{
+    from {opacity: 0;}
+    to {opacity:100;}
+}
+
+@keyframes point
+{
+    0% { transform: scale(0.8); -webkit-transform: scale(0.8); opacity: 30;}
+    50% {transform: scale(1.0); -webkit-transform: scale(1.0); opacity: 100;}
+    100% { transform: scale(0.8); -webkit-transform: scale(0.8); opacity: 30;}
+}
+
+@-webkit-keyframes point
+{
+    0% { transform: scale(0.8); -webkit-transform: scale(0.8); opacity: 30;}
+    50% {transform: scale(1.0); -webkit-transform: scale(1.0); opacity: 100;}
+    100% { transform: scale(0.8); -webkit-transform: scale(0.8); opacity: 30;}
+}
+/*section1 animation end*/
+/*section1 style end*/
+
+
+
+/*section2 style start*/
+.swiper-container2{margin:0 auto;position:relative;overflow:hidden;z-index:1; width: 885px; height: 556px;}
+#section2 .showbox .sectionbox{positon:relative;}
+
+#section2 .section2 .showbox{opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
+#section2 .section2 .showbox .title{opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
+
+#section2.active .section2 .showbox{-webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 0.5s;opacity: 1;}
+#section2.active .section2 .showbox .title{-webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 1.5s;opacity: 1;}
+
+#section2 .showbox .title{ position: absolute; z-index: 101; top: -76px; left: -76px; width: 145px; height: 145px; background: #fff;  border: 4px solid #b48d71; border-radius: 154px;}
+#section2 .showbox .title h2{ color: #9a7458; font-size: 27px; text-align: center; line-height: 145px; height: 145px; margin-top: 0px;}
+
+#section2 .showbox .hide{display: none;}
+#section2 .showbox .dialog{ position: relative; width: 885px; height: 586px; }
+#section2 .showbox .dialog1{ position: absolute; left: -330px; top: -60px;}
+#section2 .showbox .dialog1 .line{ text-align: center; opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
+#section2 .showbox .dialog1 .head{ opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
+#section2 .showbox .dialog1.active .line{ -webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 0.5s;opacity: 1;}
+#section2 .showbox .dialog1.active .head{ -webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 1s;opacity: 1;}
+
+
+#section2 .showbox .page1{ width: 885px; height: 586px; background: url("../images/section2/2002.png") no-repeat;}
+#section2 .showbox .page1.active{ background: url("../images/section2/2002_1.png") no-repeat;}
+#section2 .showbox .page1 .search{ position: absolute; left: 168px; top:65px; width: 287px; height: 35px; background: url("../images/section2/search1.png") no-repeat; padding: 3px 4px 3px 40px; cursor: pointer; }
+#section2 .showbox .page1 .search input{ width: 240px; height: 29px;border: 0;background-color:transparent}
+#section2 .showbox .page1 .search2{ position: absolute; left: 453px; top:65px; width: 80px; height: 35px; background: url("../images/section2/search2.png") no-repeat; cursor: pointer; }
+#section2 .showbox .page1 .btnsearch{position: absolute; left: 560px;; top:76px; cursor: pointer;}
+#section2 .showbox .page1 .cursor{position: absolute; left: 470px; top:88px; opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
+/*#section2.active .showbox .page1 .cursor{-webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 3.5s;opacity: 1;}*/
+#section2.active .swiper-slide-active .cursor{
+    animation:point 1.8s infinite;
+    -webkit-animation:point 1.8s infinite;
+    -o-animation:point 1.8s infinite;
+    animation-delay:2s;
+}
+#section2 .showbox .page1 .content{position: absolute; left: 168px; top:115px;}
+
+#section2 .showbox .page2{ width: 885px; height: 586px; background: url("../images/section2/2013.jpg") no-repeat;}
+#section2 .showbox .page2.active{ background: url("../images/section2/2013_1.jpg") no-repeat;}
+#section2 .showbox .page2 .content,#section2 .showbox .page2 .content2{ position: absolute; left: 168px; top:128px; opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.1s;}
+#section2 .showbox .swiper-slide-active .content{ -webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 1s;opacity: 1;}
+#section2 .showbox .content2.active{ -webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 0.5s;opacity: 1;}
+#section2 .showbox .page2 .cursor{position: absolute; left: 317px; top:250px; opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
+
+#section2 .showbox .page3.bk-0{ width: 885px; height: 586px; background: url("../images/section2/2022_1.jpg") no-repeat;}
+#section2 .showbox .page3.bk-1{ width: 885px; height: 586px; background: url("../images/section2/2022_2.jpg") no-repeat;}
+#section2 .showbox .page3.bk-2{ width: 885px; height: 586px; background: url("../images/section2/2022_3.jpg") no-repeat;}
+#section2 .showbox .page3 .content{position: absolute; left: 168px; top:115px; width: 600px; height: 400px;}
+#section2 .showbox .page3 .left_menu{position: absolute;  left: 0px;  top: 70px;  width: 150px; height: 120px; cursor: pointer;}
+#section2 .showbox .page3 .left_menu ul{ padding: 0; margin: 0; }
+#section2 .showbox .page3 .left_menu ul li{ padding: 0; margin: 0; width: 100%; height: 40px;}
+#section2 .showbox .page3 .cursor{position: absolute; left: 155px; top:125px; opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
+
+#section2 .showbox .page4{ width: 885px; height: 586px; background: url("../images/section2/2033.png") no-repeat;}
+#section2 .showbox .page4 .content{position: absolute; top: 120px; left: 200px;}
+#section2 .showbox .page4 .cursor{position: absolute; left: 575px; top:380px; opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
+/*section2 style end*/
+
+
+
+/*section3 style start*/
+/*布局*/
+.wrap { width: 1180px; height: 616px; position: absolute; top: 50%; margin-top: -308px; left: 50%; margin-left: -590px; }
+.section3 .hide{display: none!important;}
+.section3{height: 100%;background-color: #f0e6df;}
+.section3 .clock{background-image: url("../images/section3/clock.png");background-size: 100%;width: 153px;height: 72px;position: absolute; top: 2px; left: 12px;}
+.section3 .door{background-image: url("../images/section3/door.png");width: 173px;height: 304px;position: absolute; top: 176px; left: -35px;}
+.section3 .window{background-image: url("../images/section3/window.png");width: 170px;height: 158px;position: absolute;}
+.section3 .window1{left: 191px; top: 208px;}
+.section3 .window2{right: 21px; top: 208px;}
+.section3 .rect{background-image: url("../images/section3/rect.png");width: 499px;height: 216px;position: absolute; top: 22px; left: 416px;}
+.section3 .circle{background-image: url("../images/section3/circle.png");width: 149px;height: 149px;position: absolute; right: 216px; top: -18px;}
+.section3 .next{background-image: url("../images/section3/next.png");width: 50px;height: 30px;position: absolute; right: 312px; top: 164px;display: block;}
+.section3 .work{width: 780px; position: absolute; bottom: 8px; height: 365px; text-align: center; left: 50%;margin-left: -390px;z-index: 2;}
+.section3 .work .peo1{position: absolute;left: 0;top: 0;}
+.section3 .work .peo2{position: absolute;left: 166px;top: 9px;}
+.section3 .work .peo3{position: absolute;left: 332px;top: 0;}
+.section3 .work .peo4{position: absolute;left: 496px;top: 9px;}
+.section3 .work .peo5{position: absolute;left: 662px;top: 9px;}
+.section3 .desk{background-image: url("../images/section3/desk.png");width: 398px;height: 510px;position: absolute;top: 50%;margin-top: -255px;left: 0;}
+.section3 .space{background-image: url("../images/section3/space.png");width: 663px;height: 556px;position: absolute;top: 50%;margin-top: -298px;right: -30px;}
+.section3 .space .space-l{ width: 154px; height: 501px;position: absolute; left: 0; top: 71px;padding-top: 15px; text-align: center;z-index: 9;}
+.section3 .space .space-l ul li{position: relative;}
+.section3 .space .space-l ul li.current img{display: block;}
+.section3 .space .space-l ul li a{display: block; font: 18px/40px "microsoft yahei"; color: #21406e;height: 40px;z-index: 3;}
+.section3 .space .space-l ul li img{position: absolute;left: 0;top: 0;z-index: -1;display: none;opacity: .5;}
+.section3 .space .space-r{width: 509px; height: 501px; position: absolute; right: 0;top: 55px;}
+.section3 .space-circle{background-image: url("../images/section3/space-circle.png");width: 149px;height: 149px;position: absolute;left: -82px; top: -48px;z-index: 10;}
+.section3 .arrow1{background-image: url("../images/section3/arrow1.png");width: 464px;height: 41px;position: absolute;left: -265px; top: 98px;z-index: 1;}
+.section3 .arrow2{background-image: url("../images/section3/arrow2.png");width: 346px;height: 169px;position: absolute;left: -153px; top: 141px;z-index: 1;}
+.section3 .arrow3{background-image: url("../images/section3/arrow3.png");width: 466px;height: 331px;position: absolute;left: -263px; top: 156px;z-index: 1;}
+.section3 .space5-show{display: inline-block;}
+
+/*动画*/
+.active .section3 .clock{
+    animation-name: swing;
+    animation:swing 1s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .door{
+    animation-name: slideInLeft;
+    animation:slideInLeft 1s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .window1{
+    animation-name: bounceInDown;
+    animation:bounceInDown 1s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .window2{
+    animation-name: bounceInDown;
+    animation:bounceInDown 1s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .work .peo1{
+    animation-name: bounceInUp;
+    animation:bounceInUp 2s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .work .peo2{
+    animation-name: bounceInUp;
+    animation:bounceInUp 3s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .work .peo3{
+    animation-name: bounceInUp;
+    animation:bounceInUp 3s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .work .peo4{
+    animation-name: bounceInUp;
+    animation:bounceInUp 3s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .work .peo5{
+    animation-name: bounceInUp;
+    animation:bounceInUp 3s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .rect{
+    animation-name: bounceInRight;
+    animation:bounceInRight 4s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .next{
+    animation-name: fadeOutRight;
+    animation:fadeOutRight 4s infinite;
+}
+.active .section3 .circle{
+    animation-name: bounceInDown;
+    animation:bounceInDown 5s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .desk{
+    animation-name: slideInLeft;
+    animation:slideInLeft 1s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .space{
+    animation-name: bounceInRight;
+    animation:bounceInRight 2s infinite;
+    animation-iteration-count: 1;
+}
+.active .section3 .arrow1{
+    animation-name: flash;
+    animation:flash 2s infinite;
+}
+.active .section3 .arrow2{
+    animation-name: flash;
+    animation:flash 2s infinite;
+}
+.active .section3 .arrow3{
+    animation-name: flash;
+    animation:flash 2s infinite;
+}
+/*section3 style end*/
+
+/*section4 style start*/
+.swiper-container4{margin:0 auto;position:relative;overflow:hidden;z-index:1}
+.section4 .showbox .sectionbox{positon:relative;}
+.section4 .showbox .section4_page1 .magnify{ position: absolute;top:188px;left: 455px;width: 0px; height:0px; z-index: 11;}
+.section4 .showbox .section4_page1 .point{ position: absolute; right: 185px; top:115px; opacity: 0;}
+.section4 .showbox .section4_page1 .img{ width: 100%;}
+.section4 .showbox .section4_page2 .point{ position: absolute; left: 587px; top:90px; opacity:0; }
+.section4 .showbox .section4_page3 .point{ position: absolute; left:215px; top:103px; opacity: 0; }
+.section4 .showbox .section4_page3 .send{ position: absolute;  left: 527px; top :278px ;width: 0px; height:0; opacity: 0;}
+
+.section4 .showbox .section4_page1 .nextstep{ position: absolute; left: 0px;
+    bottom:0px;width: 653px; height: 80px; display: block; z-index: 100; }
+.section4 .showbox .section4_page2 .nextstep{ position: absolute; left:548px;
+    top:80px;width:90px; height:20px; display: block; }
+.section4 .showbox .section4_page3 .sendbtn{ position: absolute; left: 210px;
+    top:88px;width:58px; height: 28px; z-index:20; display: block; }
+
+.active .section4 .swiper-slide-active  .magnify{
+    animation: magnify4 2s;
+    -moz-animation: magnify4 2s;
+    -webkit-animation: magnify4 2s;
+    -o-animation: magnify4 2s;
+    animation-delay:1s;
+    animation-fill-mode:forwards;
+}
+.active .section4 .swiper-slide-active  .point{
+    animation:point 1.8s infinite;
+    -webkit-animation:point 1.8s infinite;
+    -o-animation:point 1.8s infinite;
+    animation-delay:2.8s;
+}
+
+.section4 .swiper-slide-active  .sendbox{
+    animation:sendbox 0.5s;
+    -webkit-animation:sendbox 0.5s;
+    -o-animation:sendbox 0.5s;
+    animation-fill-mode:forwards;
+}
+.section4 .section4_page2 .point,.section4 .section4_page3 .point{animation-delay:0s;}
+
+@keyframes magnify4
+{
+    from { left: 455px;width: 0px; height:0px;}
+    to {left:129px;width: 653px; height:161px; }
+}
+
+@-webkit-keyframes magnify4
+{
+    from { left: 455px;width: 0px; height:0px;}
+    to {left:129px;width: 653px; height:161px; }
+}
+
+@keyframes senbox
+{
+    from { left: 527px; top :278px ;width: 0px; height:0; opacity:0;}
+    to { left:200px; top:79px; width:655px; height:477px; opacity:1;}
+}
+
+@-webkit-keyframes sendbox
+{
+    from { left: 527px; top :278px ;width: 0px; height:0; opacity:0;}
+    to { left:200px; top:79px; width:655px; height:477px; opacity:1;}
+}
+/*section4 style end*/
+
+
+/*section5 style start*/
+/*布局*/
+.section5 .hide{display: none!important;}
+.section5{background: #c8edff url("../images/section5/bg.png") no-repeat center bottom;height: 100%;}
+.section5 .building{background-image: url("../images/section5/building.png");width: 352px;height: 526px;position: absolute; right: -28px; top: 88px;}
+.section5 .cloud1{background-image: url("../images/section5/cloud1.png");width: 470px;height: 90px;position: absolute; top: 96px; left: -86px;}
+.section5 .cloud2{background-image: url("../images/section5/cloud2.png");width: 124px;height: 42px;position: absolute; top: 28px; left: 10px;}
+.section5 .clock{background-image: url("../images/section5/clock.png");width: 153px;height: 72px;position: absolute; top: 70px; left: -8px;;}
+.section5 .sun{background-image: url("../images/section5/sun.png");width: 159px;height: 159px;position: absolute; right: 146px; top: 280px;}
+.section5 .subway{background-image: url("../images/section5/subway.png");width: 1399px;height: 175px;position: absolute; bottom: -52px; left: 0;}
+.section5 .peo{background-image: url("../images/section5/peo.png");width: 274px;height: 255px;position: absolute; bottom: 36px; left: 22px;}
+.section5 .dialog{background-image: url("../images/section5/dialog.png");width: 487px;height: 570px;position: absolute; bottom: -3px; left: 276px;}
+.section5 .phone{width: 220px; height: 390px; left: 455px; bottom: 80px;position: absolute; }
+.section5 .txt{width: 149px; height: 149px; position: absolute; left: 283px; bottom: 466px;}
+.section5 .next1{background-image: url("../images/section5/next.png");width: 50px;height: 30px;position: absolute; right: 523px; top: 482px; display: block;}
+.section5 .next2{width: 206px;height: 36px;position: absolute;right: 514px;top: 202px;}
+.section5 .next3{width: 99px; height: 28px; position: absolute; right: 514px; top: 492px;}
+.section5 .next4{width: 61px; height: 28px; position: absolute; right: 514px; top: 166px;}
+.section5 .hand1{background-image: url("../images/section5/hand.png");width: 54px;height: 69px;position: absolute;right: 588px; top: 226px;}
+.section5 .hand2{background-image: url("../images/section5/hand.png");width: 54px;height: 69px;position: absolute;right: 530px; top: 514px;}
+.section5 .hand3{background-image: url("../images/section5/hand.png");width: 54px;height: 69px;position: absolute;right: 496px; top: 186px;}
+
+/*动画*/
+.active .section5 .clock{
+    animation-name: swing;
+    animation:swing 1s infinite;
+    animation-iteration-count: 1;
+}
+.active .section5 .building{
+    animation-name: fadeInDownBig;
+    animation:fadeInDownBig 2s infinite;
+    animation-iteration-count: 1;
+}
+.active .section5 .cloud1{
+    animation-name: fadeInLeftBig;
+    animation:fadeInLeftBig 7s infinite;
+    animation-iteration-count: 1;
+}
+.active .section5 .cloud2{
+    animation-name: fadeInLeftBig;
+    animation:fadeInLeftBig 10s infinite;
+    animation-iteration-count: 1;
+}
+.active .section5 .sun{
+    animation-name: fadeInUp;
+    animation:fadeInUp 6s infinite;
+}
+.active .section5 .subway{
+    animation-name: fadeInRightBig;
+    animation:fadeInRightBig 1s infinite;
+    animation-iteration-count: 1;
+}
+.active .section5 .peo{
+    animation-name: pulse;
+    animation:pulse 3s infinite;
+}
+.active .section5 .dialog{
+    animation-name: bounce;
+    animation:bounce 3s infinite;
+    animation-iteration-count: 1;
+}
+.active .section5 .next1{
+    animation-name: fadeInLeft;
+    animation:fadeInLeft 4s infinite;
+}
+.active .section5 .phone img{
+    animation-name: slideOutRight;
+    animation:slideOutRight .5s infinite;
+    animation-iteration-count: 1;
+}
+.active .section5 .txt img{
+    animation-name: bounceInDown;
+    animation: bounceInDown 5s infinite;
+    animation-iteration-count: 1;
+}
+.active .section5 .hand1, .active .section5 .hand2, .active .section5 .hand3{
+    animation-name: point;
+    animation: point 2.8s infinite;
+}
+
+/*section5 style end*/
+
