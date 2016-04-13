@@ -51,19 +51,32 @@ body{ font-family: "微软雅黑";}
 
 .section{ position: relative;}
 .hide{ display: none;}
+
+/*section0 background style start*/
+#section0 { width: 100%; height: 100%; overflow: visible; background-color: #f0e6df;}
+#section0 .swiper-wrapper .page1{background: url("../images/section0/1.jpg") center center no-repeat; cursor: pointer;}
+#section0 .swiper-wrapper .page2{background: url("../images/section0/2.jpg") center center no-repeat; cursor: pointer;}
+#section0 .swiper-wrapper .page3{background: url("../images/section0/3.jpg") center center no-repeat; cursor: pointer;}
+#section0 .swiper-wrapper .page4{background: url("../images/section0/4.jpg") center center no-repeat; cursor: pointer;}
+#section0 .swiper-wrapper .page4 .loading{ position: absolute; background: url("../images/section0/loading.gif") center no-repeat; width: 100%; height: 73px; bottom: 200px;}
+/*section0 background style end*/
+
 /*section1 section1 background style start*/
 .samebg{background-color: #f0e6df;}
 .samebg .officebg{ position: absolute;  width: 1260px; height: 616px; left: 50%; bottom: 111px; margin: 0 0 0 -630px; z-index: 2;}
 .samebg .floor{position: absolute; width: 100%; height: 250px; left: 0px; bottom: 0px; background: #e0d4cb; z-index: 1;}
 .samebg .clock{position: absolute; width: 153px; height: 72px; left: 48px; top: 0px; background: url("../images/section1/clock.png") no-repeat;}
-.samebg .office{ position: absolute;width: 396px; height: 304px; left: 0px; bottom: 138px; background: url("../images/section1/office.png") no-repeat; }
+.samebg .clock1{position: absolute; width: 153px; height: 72px; left: 48px; top: 0px; background: url("../images/section4/clock1.png") no-repeat;}
+.samebg .clock2{position: absolute; width: 153px; height: 72px; left: 48px; top: 0px; background: url("../images/section4/clock2.png") no-repeat;}
+.samebg .office{ position: absolute;width: 421px; height: 304px; left: 0px; bottom: 138px; background: url("../images/section1/office.png") no-repeat; }
 
 .samebg .person{position:absolute; width:165px; height:245px; left:-1000px; top:339px;background: url("../images/section1/person.png") no-repeat;}
 .samebg .showbox{ position: absolute; right:-2000px; bottom: 0; width: 855px; height: 556px; border: 15px solid #ffb400; border-radius: 15px; opacity: 0;}
-
+.samebg .showbox .tips{ position: absolute; top: -56px; left: 100px; font-size: 22px; color: #9a7458 }
 .samebg .boxarrow{ position: absolute; bottom: 77px; left: -120px; width: 110px; height: 166px; display: block; background: url("../images/section1/leftarrow.png") no-repeat;}
 .samebg .showbox .title,.samebg .showbox .changetile,.samebg .showbox .titledown{ position: absolute;top: -76px; left: -76px; width: 145px; height: 145px; background: #fff;  border: 4px solid #b48d71; border-radius: 154px; z-index: 10;}
 .samebg .showbox .title h2,.samebg .showbox .changetile h2,.samebg .showbox .titledown h2{ color: #9a7458; font-size: 27px; text-align: center; margin-top: 39px; line-height: 30px; height: 60px;font-family: "microsoft yahei";}
+.samebg  .info{font-size: 22px; color: #9a7458; width: 353px; line-height: 34px; position: absolute; top: -50px; left: 116px;}
 .active .officebg .person{
     animation: person 1s;
     -moz-animation: person 1s;
@@ -159,8 +172,9 @@ body{ font-family: "微软雅黑";}
 .showbox .closeOffice{ width: 56px; height: 28px; display: block; position: absolute; left: 427px; top: 225px;}
 .section1 .showbox .section1_page3 .send-okay{ position: absolute; left:285px; top: 224px;}
 .section1 .showbox .section1_page3 .listpage{ position: absolute; left: 0px; top:-1000px; z-index: 1000;}
-.section1 .showbox .section1_page3 .officedialog{ position: absolute; left: 234px;
-    color: #21406e; top: 117px; height: 25px; line-height: 25px; width: 500px; line-height: 25px; }
+.section1 .showbox .section1_page3 .officedialog{ position: absolute; left: 230px;
+    color: #21406e; top: 117px; height: 25px; line-height: 25px; width: 500px; line-height: 25px;
+    border: 1px solid red; padding: 0 4px; overflow: hidden; }
 /*section1 animation start*/
 .modeforwards{animation-fill-mode:forwards;}
 .active .section1 .swiper-slide-active  .point{
@@ -315,6 +329,7 @@ body{ font-family: "微软雅黑";}
 /*section2 style start*/
 .swiper-container2{margin:0 auto;position:relative;overflow:hidden;z-index:1; width: 885px; height: 556px;}
 #section2 .showbox .sectionbox{positon:relative;}
+#section2 .section2 .clock{position: absolute; width: 153px; height: 72px; left: 48px; top: 0px; background: url("../images/section2/clock.png") no-repeat;}
 
 #section2 .section2 .showbox{opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
 #section2 .section2 .showbox .title{opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 0.5s;}
@@ -323,7 +338,10 @@ body{ font-family: "微软雅黑";}
 #section2.active .section2 .showbox .title{-webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 1.5s;opacity: 1;}
 
 #section2 .showbox .title{ position: absolute; z-index: 101; top: -76px; left: -76px; width: 145px; height: 145px; background: #fff;  border: 4px solid #b48d71; border-radius: 154px;}
-#section2 .showbox .title h2{ color: #9a7458; font-size: 27px; text-align: center; line-height: 145px; height: 145px; margin-top: 0px;}
+#section2 .showbox .title h2{ color: #9a7458; font-size: 27px; text-align: center; margin-top: 43px; line-height: 30px; height: 60px; font-family: "microsoft yahei";}
+
+#section2 .showbox .tips{ position: absolute; top: -56px; left: 100px; font-size: 22px; color: #9a7458 }
+#section2 .showbox .tips span{font-size: 22px; color: #774e31; font-weight: bold;}
 
 #section2 .showbox .hide{display: none;}
 #section2 .showbox .dialog{ position: relative; width: 885px; height: 586px; }
@@ -379,10 +397,11 @@ body{ font-family: "微软雅黑";}
 .section3 .hide{display: none!important;}
 .section3{height: 100%;background-color: #f0e6df;}
 .section3 .clock{background-image: url("../images/section3/clock.png");background-size: 100%;width: 153px;height: 72px;position: absolute; top: 2px; left: 12px;}
+.section3 .clock2{background-image: url("../images/section3/clock2.png");background-size: 100%;width: 153px;height: 72px;position: absolute; top: -40px; left: 12px;}
 .section3 .door{background-image: url("../images/section3/door.png");width: 173px;height: 304px;position: absolute; top: 176px; left: -35px;}
-.section3 .window{background-image: url("../images/section3/window.png");width: 170px;height: 158px;position: absolute;}
-.section3 .window1{left: 191px; top: 208px;}
-.section3 .window2{right: 21px; top: 208px;}
+.section3 .window{width: 188px;height: 172px;position: absolute;}
+.section3 .window1{background-image: url("../images/section3/window1.png");left: 191px; top: 208px;}
+.section3 .window2{background-image: url("../images/section3/window2.png");right: 21px; top: 208px;}
 .section3 .rect{background-image: url("../images/section3/rect.png");width: 499px;height: 216px;position: absolute; top: 22px; left: 416px;}
 .section3 .circle{background-image: url("../images/section3/circle.png");width: 149px;height: 149px;position: absolute; right: 216px; top: -18px;}
 .section3 .next{background-image: url("../images/section3/next.png");width: 50px;height: 30px;position: absolute; right: 312px; top: 164px;display: block;}
@@ -402,13 +421,13 @@ body{ font-family: "微软雅黑";}
 .section3 .space .space-r{width: 509px; height: 501px; position: absolute; right: 0;top: 55px;}
 .section3 .space .space-r .next{right: 30px; top: 450px;}
 .section3 .space-circle{background-image: url("../images/section3/space-circle.png");width: 149px;height: 149px;position: absolute;left: -82px; top: -48px;z-index: 10;}
-.section3 .arrow1{background-image: url("../images/section3/arrow1.png");width: 464px;height: 41px;position: absolute;left: -265px; top: 98px;z-index: 1;}
-.section3 .arrow2{background-image: url("../images/section3/arrow2.png");width: 346px;height: 169px;position: absolute;left: -153px; top: 141px;z-index: 1;}
-.section3 .arrow3{background-image: url("../images/section3/arrow3.png");width: 466px;height: 331px;position: absolute;left: -263px; top: 156px;z-index: 1;}
+.section3 .arrow1{background-image: url("../images/section3/arrow1.png");width: 467px;height: 34px;position: absolute;left: -276px; top: 106px;z-index: 1;}
+.section3 .arrow2{background-image: url("../images/section3/arrow2.png");width: 356px;height: 102px;position: absolute;left: -170px; top: 200px;z-index: 1;}
+.section3 .arrow3{background-image: url("../images/section3/arrow3.png");width: 440px;height: 167px;position: absolute;left: -263px; top: 314px;z-index: 1;}
 .section3 .space5-show{display: inline-block;}
 
 /*动画*/
-.active .section3 .clock{
+.active .section3 .clock,.active .section3 .clock2,.active .section4 .clock2,.active .section4 .clock1{
     animation-name: swing;
     animation:swing 1s infinite;
     animation-iteration-count: 1;
@@ -656,7 +675,8 @@ body{ font-family: "微软雅黑";}
 .section5 .hand1{background-image: url("../images/section5/hand.png");width: 54px;height: 69px;position: absolute;right: 588px; top: 226px;}
 .section5 .hand2{background-image: url("../images/section5/hand.png");width: 54px;height: 69px;position: absolute;right: 530px; top: 514px;}
 .section5 .hand3{background-image: url("../images/section5/hand.png");width: 54px;height: 69px;position: absolute;right: 496px; top: 186px;}
-
+.section5 .info{font-size: 22px; color: #9a7458; width: 353px; line-height: 34px; position: absolute; top: 166px; left: -8px;}
+.section5 .info b{color: #774e31;font-weight: 700;}
 /*动画*/
 .active .section5 .clock{
     animation-name: swing;

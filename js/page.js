@@ -1,9 +1,20 @@
 var defaultTitle = '关于印发《中国移动一级客服系统对外提供数据工作管理办法》的通知';
+var mySwiper0 = new Swiper ('.swiper-container0',{
+    mousewheelControl : false,
+    pagination : '.swiper-pagination',
+    paginationClickable: true,
+    onSlideChangeEnd:function(swiper){
+        
+    },
+    speed:1000,
+    simulateTouch: false
+});
 var mySwiper = new Swiper ('.swiper-container',{
     mousewheelControl : false,
     pagination : '.swiper-pagination',
     paginationClickable: true,
     onSlideChangeEnd:function(swiper){
+        $('.section1 .title>h2').html('处理<br>待办工作');
         if(swiper.activeIndex != 2){
             $('#section1 .magnify3').removeClass('openoffice');
             $('#section1 .point3').show();
@@ -13,6 +24,8 @@ var mySwiper = new Swiper ('.swiper-container',{
             //重置保存框
             $('#section1 .listpage').removeClass('send-down');
             $('#section1 .officedialog').html(defaultTitle);
+        }else{
+            $('.section1 .title>h2').html('保存到<br>办公空间');
         }
     },
     speed:1000,
@@ -25,26 +38,29 @@ var mySwiper2 = new Swiper ('.swiper-container2',{
     onSlideChangeEnd:function(swiper){
         switch (swiper.activeIndex) {
             case  0:
-                $('#section2 .showbox .title').html('<h2>普通查找</h2>');
+                $('#section2 .showbox .title').html('<h2>查找文件<br/>很困难</h2>');
+                $('#section2 .showbox .tips').html('查找历史相关文档，不记得在哪个目录下，<span>无法找到需要的文档</span>');
                 $('#section2 .dialog1 .head img').attr('src','images/section2/2007.png');
                 $('#section2 .dialog1').removeClass('active');
                 break;
             case  1:
-                $('#section2 .showbox .title').html('<h2>对象查找</h2>');
+                $('#section2 .showbox .title').html('<h2>按对象<br/>查找</h2>');
+                $('#section2 .showbox .tips').html('通过项目、来源等对像缩小查找范围，很快在办公空间里<span>找到需要的文档</span>');
                 $('#section2 .dialog1').removeClass('active');
-
                 $('#section2 .page2 .cursor').removeAttr('style');
                 $('#section2 .page2 .content').removeClass('hide');
                 $('#section2 .page2').removeClass('active');
                 $('#section2 .page2 .content2').removeClass('active');
                 break;
             case  2:
-                $('#section2 .showbox .title').html('<h2>找到文件</h2>');
+                $('#section2 .showbox .title').html('<h2>查找文件<br/>So easy</h2>');
+                $('#section2 .showbox .tips').html('通过项目、来源等对像缩小查找范围，很快在办公空间里<span>找到需要的文档</span>');
                 $('#section2 .dialog1 .head img').attr('src','images/section2/2023.png');
                 $('#section2 .dialog1').addClass('active');
                 break;
             case  3:
-                $('#section2 .showbox .title').html('<h2>共享文件</h2>');
+                $('#section2 .showbox .title').html('<h2>共享<br/>文件</h2>');
+                $('#section2 .showbox .tips').html('将找到的文档<span>共享</span>给项目组成员');
                 $('#section2 .dialog1').removeClass('active');
                 break;
             default :
@@ -62,17 +78,25 @@ var mySwiper4 = new Swiper ('.swiper-container4',{
     onSlideChangeEnd:function(swiper){
         if(swiper.activeIndex != 2){
             $('#section4 .send').removeClass('sendbox');
+            if($('#section4 .clock1').hasClass("hide")){
+                $('#section4 .clock1').removeClass('hide');
+                $('#section4 .clock2').addClass('hide');
+            }
+        }
+        if(swiper.activeIndex != 1){
+            $('.section4_page2').removeClass('openoffice');
+        }
+        if(swiper.activeIndex == 2){
+            $('#section4 .clock1').addClass('hide');
+            $('#section4 .clock2').removeClass('hide');
         }
         if(swiper.activeIndex ==1 || swiper.activeIndex==2){
             $('#section4 .section4_page2 .send').removeClass('sendbox2');
             $('#section4 .section4_page2').removeClass('gonext');
-            $('.section4_page2').removeClass('openoffice');
         }
-
-
         var arr = ['查收<br>邮件','保存到<br>办公空间','发送<br>会议通知'];
         $('#title>h2').html(arr[swiper.activeIndex]);
-        $('#section4 .point2,#section4 .point1').show();
+        $('#section4 .point2,#section4 .point1,#section4 .point3').show();
 
     },
     speed:1000,
@@ -81,20 +105,19 @@ var mySwiper4 = new Swiper ('.swiper-container4',{
 $(function() {
     $('#fullpage').fullpage({
         verticalCentered: false,
-        anchors: ['page1', 'page2', 'page3', 'page4',"page5"],
+        anchors: ['page0', 'page1', 'page2', 'page3', 'page4',"page5"],
         afterLoad:function(anchorLink ,index){
-            //判断index是因为之前的第4版本提前到了版本1
-            if(index == 2 && window['continueAnimate'+index]){
-                window['continueAnimate'+4]();
-            }else if(index>2 && index < 5){
-                window['continueAnimate'+(index-1)]();
-            }else{
-                if(window['continueAnimate'+index]){
-                    window['continueAnimate'+index]();
+            if(index != 2){
+                if($('#section4 .clock1').hasClass("hide")){
+                    $('#section4 .clock1').removeClass('hide');
+                    $('#section4 .clock2').addClass('hide');
                 }
             }
 
-
+            //判断index是因为之前的第4版本提前到了版本1
+            if(window['continueAnimate'+index]){
+                window['continueAnimate'+index]();
+            }
         },
         navigation: true
     });
@@ -104,7 +127,7 @@ $(function() {
     function init(){
         var floorHeight = 250;
         var oBottom = 111;
-        var lrHeight = 655;
+        var lrHeight = 675;
 
         var windowHeight = $(window).height();
 
@@ -120,6 +143,25 @@ $(function() {
 });
 
 function continueAnimate1(){
+    if(mySwiper0.activeIndex != 0){
+        mySwiper0.slideTo(0);
+    }
+
+    $('#section0 .swiper-wrapper div').click(function(){
+        for (var i = 1; i < 5; i++) {
+            if($(this).hasClass('page'+i)){
+                mySwiper0.slideTo(i);
+            }
+        };        
+    });
+
+    $('#section0 .swiper-wrapper .loading').click(function(event){
+        $.fn.fullpage.moveSectionDown();
+        event.stopPropagation();
+    });
+}
+
+function continueAnimate2(){
     $('.section1 .clock').removeClass('animated swing').show(100,function(){
         $('.section1 .clock').addClass('animated swing');
     });
@@ -145,7 +187,9 @@ function continueAnimate1(){
         var title = $('#section1 ul li.inputlist input').val();
         $('#section1 .officedialog').html(title);
         $('.listpage').addClass('send-down');
-        $('.send-okay').fadeIn(2000).fadeOut(1500);
+        $('.send-okay').fadeIn(2000).fadeOut(1500,function(){
+            $.fn.fullpage.moveSectionDown();
+        });
     });
 
     $('#section1 .closeOffice').off().on('click',function(){
@@ -179,7 +223,12 @@ function continueAnimate1(){
     });
 }
 
-function continueAnimate2(){
+function continueAnimate4(){
+    $('.section2 .clock').removeClass('animated swing').show(100,function(){
+        $('.section2 .clock').addClass('animated swing');
+    });
+
+
     if(mySwiper2.activeIndex != 0) {
         mySwiper2.slideTo(0);
     }
@@ -215,7 +264,8 @@ function continueAnimate2(){
     //对象查找
     $('#section2 .page1 .btnsearch').click(function(){
         mySwiper2.slideTo(1);
-        $('#section2 .showbox .title').html('<h2>对象查找</h2>');
+        $('#section2 .showbox .title').html('<h2>按对象<br/>查找</h2>');
+        $('#section2 .showbox .tips').html('通过项目、来源等对像缩小查找范围，很快在办公空间里<span>找到需要的文档</span>');
         $('#section2 .dialog1').removeClass('active');
 
         $('#section2 .page2 .cursor').removeAttr('style');
@@ -235,7 +285,7 @@ function continueAnimate2(){
     });
     $('#section2 .page2 .content2').click(function(){
         mySwiper2.slideTo(2);
-        $('#section2 .showbox .title').html('<h2>找到文件</h2>');
+        $('#section2 .showbox .title').html('<h2>查找文件<br/>So easy</h2>');
         $('#section2 .dialog1 .head img').attr('src','images/section2/2023.png');
         $('#section2 .dialog1').addClass('active');
         $('#section2 .page2 .content2').removeClass('active');
@@ -249,20 +299,22 @@ function continueAnimate2(){
 
     $('#section2 .page3 .content').click(function(){
         mySwiper2.slideTo(3);
-        $('#section2 .showbox .title').html('<h2>共享文件</h2>');
+        $('#section2 .showbox .title').html('<h2>共享<br/>文件</h2>');
+        $('#section2 .showbox .tips').html('将找到的文档<span>共享</span>给项目组成员');
         $('#section2 .dialog1').removeClass('active');
     });
 
     $('#section2 .page4 .content').click(function(event){
         $('#section2 .page1,#section2 .page2,#section2 .page3,#section2 .page4').removeAttr("style");
-        $('#section2 .showbox .title').html('<h2>普通查找</h2>');
+        $('#section2 .showbox .title').html('<h2>查找文件<br/>很困难</h2>');
+        $('#section2 .showbox .tips').html('查找历史相关文档，不记得在哪个目录下，<span>无法找到需要的文档</span>');
         $('#section2 .dialog1 .head img').attr('src','images/section2/2007.png');
         $.fn.fullpage.moveSectionDown();
         event.stopPropagation();
     });
 }
 
-function continueAnimate4(){
+function continueAnimate3(){
     if(mySwiper4.activeIndex != 0){
         mySwiper4.slideTo(0);
     }
@@ -275,6 +327,9 @@ function continueAnimate4(){
     $('#section4 .sendbtn').off().on('click',function(){
         $('#section4 .section4_page3 .send').addClass('sendbox');
         $('#section4 .point').hide();
+        setTimeout(function(){
+            $.fn.fullpage.moveSectionDown();
+        },1500);
     });
 
     $('#section4 .openofficebtn').off().on('click',function(){
@@ -301,7 +356,7 @@ function continueAnimate4(){
 }
 
 //第三屏动画事件处理
-function continueAnimate3(){
+function continueAnimate5(){
     clearInterval(timer);
     var timer = setInterval(function(){
         var hash = window.location.hash;
@@ -322,7 +377,7 @@ function continueAnimate3(){
     $(".section3 .space-l li").removeClass('current');
     $(".section3 .space-l li:eq(0)").addClass('current');
     $(".section3 .space-r img").addClass('hide');
-    $(".section3 .space-r img:eq(1)").removeClass('hide');
+    $(".section3 .space-r img:eq(0)").removeClass('hide');
     $(".section3 .space5-show").removeClass("hide");
 
     $(".section3 .next").off("click").on("click",function(e){
@@ -357,7 +412,7 @@ function continueAnimate3(){
 }
 
 //第五屏交互
-function continueAnimate5(){
+function continueAnimate6(){
     //还原
     clearInterval(timer);
     var timer = setInterval(function(){

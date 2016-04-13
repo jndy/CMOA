@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/qunit/qunit-1.18.0.css">
 	<meta charset="utf-8">
-	<title>三期演示版</title>
+	<title>个人办公空间演示</title>
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
@@ -12,6 +12,25 @@
 <body>
 <div id="warp">
 	<div id="fullpage">
+		<!--section0 start-->
+		<div class="section" id="section0">
+			<div class="swiper-container0" style="height:100%;">
+				<div class="swiper-wrapper">
+				    <div class="page1 swiper-slide">
+				    </div>
+				    <div class="page2 swiper-slide">
+				    </div>
+				    <div class="page3 swiper-slide">
+				    </div>
+				    <div class="page4 swiper-slide">
+				    	<div class="loading"></div>
+				    </div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<!--section0 end-->
+
 		<!--section1 start-->
 		<div class="section samebg" id="section1">
 			<div class="section1 officebg">
@@ -23,7 +42,9 @@
 					<div class="title">
 						<h2>处理<br>待办工作</h2>
 					</div>
-
+					<div class="tips">
+						早上来到办公室，打开OA系统，处理待办工作，将<b>公文保存至办公空间</b>
+					</div>
 					 <span class="boxarrow"></span>
 					 <div class="sectionbox swiper-container">
 						 <div class="setionwarp swiper-wrapper">
@@ -131,6 +152,8 @@
 		<!--section4 start-->
 		<div class="section samebg" id="section4">
 			<div class="section4 officebg">
+                <div class="clock1"></div>
+                <div class="clock2 hide"></div>
 				<div class="office"></div>
 				<div class="person"></div>
 
@@ -138,7 +161,9 @@
 					<div class="title" id="title">
 						<h2>查收<br>邮件</h2>
 					</div>
-
+					<div class="tips">
+						接着打开统一邮件系统，收到一封关于网络安全的<b>未读邮件</b>
+					</div>
 					<span class="boxarrow"></span>
 					<div class="sectionbox swiper-container4">
 						<div class="setionwarp swiper-wrapper">
@@ -248,8 +273,9 @@
 				<div class="person"></div>
 				<div class="showbox">
 					<div class="title">
-						<h2>普通查找</h2>
+						<h2>查找文件<br/>很困难</h2>
 					</div>
+					<div class="tips">查找历史相关文档，不记得在哪个目录下，<span>无法找到需要的文档</span></div>
 					<span class="boxarrow"></span>
 					<div class="swiper-container2">
 						<div class="dialog swiper-wrapper">
@@ -312,6 +338,7 @@
                 <!-- 第一屏动画 ]] -->
                 <!-- 第二屏动画 [[ -->
                 <div class="wrap hide">
+                    <div class="clock2"></div>
                     <div class="desk"></div>
                     <div class="space">
                         <div class="space-l">
@@ -355,6 +382,9 @@
                     <div class="building"></div>
                     <div class="subway"></div>
                     <div class="dialog"></div>
+                    <div class="info">
+                        下班途中收到备忘提醒，用手机<b>查看办公空间资料</b>，回顾当天工作内容，对会议纪要进行<b>在线批注</b>，邮件发送给相关人员
+                    </div>
                     <div class="switch">
                         <div class="phone">
                             <img src="images/section5/phone1.png" alt="" class="phone1"/>
