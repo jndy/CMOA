@@ -36,7 +36,14 @@ var mySwiper2 = new Swiper ('.swiper-container2',{
     pagination : '.swiper-pagination',
     paginationClickable: true,
     onSlideChangeEnd:function(swiper){
+        $('#section2 .page1 .cursor').animate({
+            left:470
+        });
+
+        $('.btnsearch').hide();
+        $('#section2 .page1 .content img').attr('src', 'images/section2/2005.png');
         switch (swiper.activeIndex) {
+
             case  0:
                 $('#section2 .showbox .title').html('<h2>查找文件<br/>很困难</h2>');
                 $('#section2 .showbox .tips').html('查找历史相关文档，不记得在哪个目录下，<span>无法找到需要的文档</span>');
@@ -228,13 +235,14 @@ function continueAnimate4(){
         $('.section2 .clock').addClass('animated swing');
     });
 
-
+    $('#section2 .page1 .btnsearch').hide();
     if(mySwiper2.activeIndex != 0) {
         mySwiper2.slideTo(0);
     }
 
     //普通查找
     $('#section2 .page1 .search2').click(function(){
+        $('#section2 .page1 .btnsearch').show();
         var keyword = $('#txt_page1').val().trim();
         if(keyword == '安全'){
             $('#section2 .page1 .content img').attr('src', 'images/section2/2005_1.png');
