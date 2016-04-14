@@ -112,7 +112,7 @@ var mySwiper4 = new Swiper ('.swiper-container4',{
 $(function() {
     $('#fullpage').fullpage({
         verticalCentered: false,
-        anchors: ['page0', 'page1', 'page2', 'page3', 'page4',"page5"],
+        anchors: ['page0', 'page1', 'page2', 'page3', 'page4',"page5","page6"],
         afterLoad:function(anchorLink ,index){
             if(index != 2){
                 if($('#section4 .clock1').hasClass("hide")){

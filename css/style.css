@@ -741,3 +741,17 @@ body{ font-family: "微软雅黑";}
 
 /*section5 style end*/
 
+/*section6 style start*/
+#section6 { width: 100%; height: 100%; overflow: visible; background: url('../images/end/6.png') center center no-repeat #f0e6df;}
+#section6 .goIndex{position: absolute; background: url('../images/end/btn_nor.png') center center no-repeat; width: 100%; height: 60px; cursor: pointer; bottom: 200px; opacity: 0; transition: all 0.1s;}
+#section6 .goIndex:hover{background: url('../images/end/btn_press.png') center center no-repeat; }
+#section6.active .goIndex{
+    animation: showbox 0.5s;
+    -moz-animation: showbox 0.5s;
+    -webkit-animation: showbox 0.5s;
+    -o-animation: showbox 0.5s;
+    animation-delay:0.5s;
+    animation-fill-mode:forwards;
+}
+/*section6 style end*/
+
